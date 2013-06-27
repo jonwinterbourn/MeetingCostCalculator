@@ -24,26 +24,55 @@ function onDeviceReady() {
     var grade7costpersec = grad7avSal/yeartosec;
     var grade8costpersec = grad8avSal/yeartosec;
     var grade9costpersec = grad9avSal/yeartosec;
-    var meetingCost =0;
-
+    var meetingCost = 0;
+    
+        
     //set form input values
     $("div#setAttendees div input#Grade6s").val(grade6s);
     $("div#setAttendees div input#Grade7s").val(grade7s);
     $("div#setAttendees div input#Grade8s").val(grade8s);
     $("div#setAttendees div input#Grade9s").val(grade9s);
 
+    if (attendeesSet) {
+        $("ul.attendees").show();
+        $("div#meetingAlert").hide();   
+    }
+    else {
+        $("div#meetingAlert").show();
+        $("ul.attendees").hide();
+    }
+    
+    
+    
     $("div#setAttendees div input").change(function(){
-        /*
+        
         grade6s = $("div#setAttendees div input#Grade6s").val();
         grade7s = $("div#setAttendees input#Grade7s").val();
         grade8s = $("div#setAttendees input#Grade8s").val();
         grade9s = $("div#setAttendees input#Grade9s").val();
         
+        
         $("ul.attendees span#grade6nos").html(grade6s);
         $("ul.attendees span#grade7nos").html(grade7s);
         $("ul.attendees span#grade8nos").html(grade8s);
         $("ul.attendees span#grade9nos").html(grade9s);
-        */
+        
+        if (grade6s== 0 && grade7s==0 && grade8s==0 && grade9s==0) {
+            attendeesSet = false;
+        }
+        else {
+            attendeesSet = true;
+        }
+        
+        if (attendeesSet) {
+        $("ul.attendees").show();
+        $("div#meetingAlert").hide();   
+    }
+    else {
+        $("div#meetingAlert").show();
+        $("ul.attendees").hide();
+    }
+        
     });
     
     
@@ -65,9 +94,11 @@ function onDeviceReady() {
                 meetingCost = grade6meetingcost + grade7meetingcost + grade8meetingcost  + grade9meetingcost ;
                 $("div.cost").html('£' + meetingCost.toFixed(2));
                 count++;
-        }, 1000);
+            }, 1000);
             
-        };
+            //alert(grade6s + "," + grade7s + "," + grade8s);
+            
+        }
         
         if ($(this).hasClass('stopMeeting')) {
             $(this).button('disable');
@@ -75,7 +106,7 @@ function onDeviceReady() {
             $('button.startMeeting').button('enable');
             $('button.clearMeeting').button('enable');            
             clearInterval(countdown );
-        };
+        }
         
         if ($(this).hasClass('clearMeeting')) {
             $(this).button('disable');
@@ -85,9 +116,11 @@ function onDeviceReady() {
             $("div.countdown").html(count);
             $("div.cost").html('£0:00');
             clearInterval(countdown);
-        };
+        }
     
-    });        
+    });     
+    
+    
 
     
     
@@ -95,29 +128,27 @@ function onDeviceReady() {
 
  
 //=======================Set Attendees (Page 1) Operations=======================//
-function setAttendeees() {
-    grade6s = $("div#setAttendees div input#Grade6s").val();
-    grade7s = $("div#setAttendees input#Grade7s").val();
-    grade8s = $("div#setAttendees input#Grade8s").val();
-    grade9s = $("div#setAttendees input#Grade9s").val();
-        
-    $("ul.attendees span#grade6nos").html(grade6s);
-    $("ul.attendees span#grade7nos").html(grade7s);
-    $("ul.attendees span#grade8nos").html(grade8s);
-    $("ul.attendees span#grade9nos").html(grade9s);
 
-    //back to home
-    //window.location = "#home";
+
+function setAttendees() {
             
-}
-
-function setAttendeeesReset() {
-    var sayHelloInputElem = document.getElementById('helloWorldInput');
-    var sayHelloTextElem = document.getElementById('helloWorldText');
-    var inputText = document.getElementById('txtName');
+           
+    $("div#setAttendees div input").trigger('change');
+    //location.href="#home";
+    $.mobile.changePage('#home', {
+        transition: 'slide'
+        });
+    //});
     
-    inputText.value = '';
-    sayHelloTextElem.style.display = 'none';
-    sayHelloInputElem.style.display = 'block';
-}
+    }
+
+
+function setAttendeesReset() {
+    $("div#setAttendees div input#Grade6s").val(0);
+    $("div#setAttendees div input#Grade7s").val(0);
+    $("div#setAttendees div input#Grade7s").val(0);
+    $("div#setAttendees div input#Grade7s").val(0);
+    
+    $("div#setAttendees div input").trigger('change');
+}   
 
