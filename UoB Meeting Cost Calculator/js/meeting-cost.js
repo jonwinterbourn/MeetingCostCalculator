@@ -146,8 +146,8 @@ function setAttendees() {
 function setAttendeesReset() {
     $("div#setAttendees div input#Grade6s").val(0);
     $("div#setAttendees div input#Grade7s").val(0);
-    $("div#setAttendees div input#Grade7s").val(0);
-    $("div#setAttendees div input#Grade7s").val(0);
+    $("div#setAttendees div input#Grade8s").val(0);
+    $("div#setAttendees div input#Grade9s").val(0);
     
     $("div#setAttendees div input").trigger('change');
 }   
