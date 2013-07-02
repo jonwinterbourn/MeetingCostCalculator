@@ -11,11 +11,11 @@
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
-    <BundleVersion>2.0</BundleVersion>
-    <iOSDisplayName />
+    <BundleVersion>3.0</BundleVersion>
+    <iOSDisplayName>UoB Meeting Cost Calculator</iOSDisplayName>
     <iOSDeviceFamily>1;2</iOSDeviceFamily>
     <iOSBackgroundMode />
-    <AndroidVersionCode>2</AndroidVersionCode>
+    <AndroidVersionCode>3</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
