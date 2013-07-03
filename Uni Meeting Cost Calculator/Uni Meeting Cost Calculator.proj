@@ -3,19 +3,19 @@
   <PropertyGroup>
     <ProjectGuid>e9a37f4c-72cc-47b0-87ca-ca9f730ef6b6</ProjectGuid>
     <ProjectTypeGuids>{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}</ProjectTypeGuids>
-    <AppIdentifier>uk.ac.birmingham.m.UoBMeetingCostCalculator</AppIdentifier>
-    <ProjectName>UoB Meeting Cost Calculator</ProjectName>
+    <AppIdentifier>uk.ac.birmingham.m.UniMeetingCostCalculator</AppIdentifier>
+    <ProjectName>Uni Meeting Cost Calculator</ProjectName>
     <IsRunnable>true</IsRunnable>
     <TemplateAppName>Cordova240</TemplateAppName>
     <AndroidPermissions>android.permission.READ_PHONE_STATE;android.permission.INTERNET;android.permission.WRITE_EXTERNAL_STORAGE;android.permission.ACCESS_NETWORK_STATE;android.permission.WAKE_LOCK</AndroidPermissions>
     <DeviceOrientations>Portrait;Landscape</DeviceOrientations>
     <iOSStatusBarStyle>Default</iOSStatusBarStyle>
     <AndroidHardwareAcceleration>false</AndroidHardwareAcceleration>
-    <BundleVersion>3.0</BundleVersion>
+    <BundleVersion>4.0</BundleVersion>
     <iOSDisplayName>UoB Meeting Cost Calculator</iOSDisplayName>
     <iOSDeviceFamily>1;2</iOSDeviceFamily>
     <iOSBackgroundMode />
-    <AndroidVersionCode>3</AndroidVersionCode>
+    <AndroidVersionCode>4</AndroidVersionCode>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="App_Resources" />
@@ -39,6 +39,7 @@
     </Folder>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="App_Resources\Android\AndroidManifest.xml" />
     <Resource Include="App_Resources\iOS\icon.png" />
     <Resource Include="App_Resources\iOS\icon@2x.png" />
     <Resource Include="App_Resources\iOS\icon-72.png" />
